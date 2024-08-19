@@ -1,0 +1,294 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+/* Navbar styles */
+.navbar {
+    padding: 20px 10px; /* Meningkatkan padding untuk navbar lebih tinggi */
+    background: #3572EF;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 2rem; /* Menambah ukuran font untuk navbar-brand */
+}
+
+.navbar-brand img {
+    height: 50px; /* Meningkatkan ukuran gambar logo */
+    margin-right: 15px; /* Meningkatkan jarak antara gambar dan teks */
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    padding-right: 10px;
+}
+
+.konten {
+    flex: 1;
+    width: 100%;
+}
+
+.input-short {
+    max-width: 500px; /* Sesuaikan nilai ini dengan kebutuhan Anda */
+}
+
+footer {
+    background-color: white;
+    width: calc(100% - 250px);
+    padding: 30px;
+    text-align: center;
+    color: #858796;
+    font-size: 0.9rem;
+    margin-top: auto;
+    margin-left: 250px; /* Ensure footer does not overlap with sidebar */
+    position: relative;
+    border-top: 1px solid #858796; /* Border at the top */
+}
+
+.logo {
+    width: 50px; /* Ukuran logo, bisa diubah sesuai kebutuhan */
+    height: 50px; /* Ukuran logo, harus sama dengan width untuk menjaga bentuk bulat */
+    border-radius: 50%; /* Membuat logo menjadi bulat */
+}
+
+
+table {
+    width: 100%; /* Memastikan tabel tidak lebih lebar dari konten */
+    margin: 0; /* Menghapus margin default untuk mencegah overflow */
+}
+
+table > tbody > * {
+    vertical-align: middle;
+}
+
+.table th, .table td {
+    padding: 0.75rem 0.5rem;
+}
+
+.table th:nth-child(1), .table td:nth-child(1) {
+    width: 10%;
+}
+
+.table th:nth-child(2), .table td:nth-child(2) {
+    width: 15%;
+}
+
+.table th:nth-child(3), .table td:nth-child(3) {
+    width: 20%;
+}
+
+.table th:nth-child(4), .table td:nth-child(4) {
+    width: 20%;
+}
+
+.table th:nth-child(5), .table td:nth-child(5) {
+    width: 20%;
+}
+
+.aksi-tengah {
+    transform: translateX(50px);
+}
+
+.sampul {
+    max-width: 77px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.btn {
+    border-radius: 5px !important;
+}
+
+/* Sidebar styles */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 56px; /* Adjust this to your navbar height */
+    left: 0;
+    height: 100%;
+    background: #2C4E80;
+    color: white;
+    transition: all 0.3s;
+}
+
+#sidebar .components {
+    padding: 20px 0;
+}
+
+#sidebar .components a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: all 0.3s;
+}
+
+#sidebar .components a:hover {
+    background: #00215E;
+    margin-left: -30px;
+}
+
+/* Content styles */
+#content {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+
+    #content.active {
+        width: calc(100% - 250px);
+        margin-left: 250px;
+    }
+}
+
+#cartSidebar {
+    position: fixed;
+    top: 0px;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background: #f8f9fa;
+    transition: right 0.3s;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+#cartSidebar.active {
+    right: 0;
+}
+
+#cartSidebar .cart-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin-bottom: 20px;
+    background-color: #2C4E80;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+#cartSidebar .cart-sidebar-header h5 {
+    margin: 0;
+}
+
+#cartSidebar .cart-sidebar-header button {
+    margin-left: 10px;
+}
+
+.add-to-cart.checked i {
+    color: white;
+}
+
+.item-price {
+    font-weight: bold;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.popup-header h5 {
+    margin: 0;
+}
+
+.popup-header button {
+    border: none;
+    background: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.popup-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Add styles for overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    display: none; /* Hide overlay by default */
+    z-index: 999; /* Ensure overlay is above other content */
+}
+
+#overlay.active {
+    display: block; /* Show overlay when active */
+}
+
+.popup {
+    display: none; /* Hide popup by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure popup is above overlay */
+    max-width: 90%;
+    width: 400px;
+}
+
+.popup.active {
+    display: block; /* Show popup when active */
+}
